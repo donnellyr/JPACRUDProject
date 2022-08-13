@@ -1,6 +1,9 @@
 package com.skilldistillery.nflteams.entities;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -42,5 +45,13 @@ private NFLteam team;
 	void test() {
 		assertNotNull(team);
 	}
+	void test_find_team_by_id() {
+		assertEquals("Giants", team.getName());
+	}
+	void test_correct_number_of_teams_are_found() {
+		String sql = ("SELECT t FROM NFLteam t");
 
+		List<NFLteam> teams = em.createNamedQuery(sql,NFLteam.class).getResultList();
+		assertEquals(32, teams.size());
+	}
 }

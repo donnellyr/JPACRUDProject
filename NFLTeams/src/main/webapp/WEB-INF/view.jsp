@@ -8,14 +8,21 @@
 <title>View Team</title>
 </head>
 <body>
-<h1>${team.name}</h1>
+<a href="home.do">Home</a>
+<h1>${team.city} ${team.name}</h1>
 <table>
-<tr>${team.abbreviation}</tr>
-<tr>${team.city} </tr>
-<tr>${team.division} </tr>
-<tr>${team.conference} </tr>
-<tr>${team.sbWins} </tr>
+<tr>Abbreviation: ${team.abbreviation}</tr>
+<br>
+<tr>Conference: ${team.conference} </tr>
+<br>
+<tr>Division: ${team.division} </tr>
+<br>
+<tr>SuperBowls Won: ${team.sbWins} </tr>
 </table>
+<form action="editView.do">
+<input type="hidden" id="id" name="id" value="${team.id}">
+<input type="submit" value="Edit Team">
+</form>
 <form action="delete.do">
 <input type="hidden" id="id" name="id" value="${team.id}">
 <input type="submit" value="Delete Team">

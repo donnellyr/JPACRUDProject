@@ -52,4 +52,21 @@ public class NFLTeamDAOImpl implements NFLTeamDAO {
   		return false;
 	}
 
+	@Override
+	public boolean editTeam(int id, String abbreviation, String name, String city, String division, String conference,
+			int sbWins) {
+		NFLteam editTeam = em.find(NFLteam.class, id);
+		editTeam.setAbbreviation(abbreviation);
+		editTeam.setCity(city);
+		editTeam.setConference(conference);
+		editTeam.setDivision(division);
+		editTeam.setName(name);
+		editTeam.setSbWins(sbWins);
+		em.persist(editTeam);
+		em.flush();
+		System.out.println("edited team"+ editTeam);
+
+		return false;
+	}
+
 }

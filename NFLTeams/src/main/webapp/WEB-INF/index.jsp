@@ -10,7 +10,9 @@
 <body>
 <h1>NFL Teams</h1>
 <a href="create.html">add team</a>
-<form action="getTeam.do">
+<br>
+
+Find Team By ID: <form action="getTeam.do">
 <input type="number" id="id" name="id">
 <input type="submit" value="submit">
 </form>
