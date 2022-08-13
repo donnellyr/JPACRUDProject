@@ -12,10 +12,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class NFLTeamTest {
+class NFLteamTest {
 private static EntityManagerFactory emf;
 private EntityManager em;
-private NFLTeam team; 
+private NFLteam team; 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
 		emf = Persistence.createEntityManagerFactory("JPANFLTeams");
@@ -29,7 +29,7 @@ private NFLTeam team;
 	@BeforeEach
 	void setUp() throws Exception {
 		em = emf.createEntityManager();
-		team = em.find(NFLTeam.class, 1);
+		team = em.find(NFLteam.class, 1);
 	}
 
 	@AfterEach

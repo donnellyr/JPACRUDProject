@@ -3,7 +3,7 @@
 	<persistence-unit name="JPANFLTeams">
 	
 	 <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-	 <class>com.skilldistillery.nflteams.entities.NFLTeam</class>
+	 <class>com.skilldistillery.nflteams.entities.NFLteam</class>
 	 
 
     <properties>
