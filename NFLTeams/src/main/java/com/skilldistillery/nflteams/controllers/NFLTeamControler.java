@@ -23,8 +23,8 @@ public String findById(int id, Model model) {
 	return "view";
 }
 @RequestMapping(path="add.do")
-public String addTeam(String abbreviation, String name, String city, String division, String conference, int sbWins,Model model) {
-NFLteam newteam = new NFLteam(abbreviation,name,city,division,conference,sbWins);
+public String addTeam(String abbreviation, String name, String city, String division, String conference, int sbWins,String logo,Model model) {
+NFLteam newteam = new NFLteam(abbreviation,name,city,division,conference,sbWins,logo);
 try {
 	System.out.println("*******"+newteam);
 	dao.addTeam(newteam);
@@ -58,10 +58,10 @@ public String editView(int id, Model model) {
 
 }
 @RequestMapping(path="editTeam.do")
-public String editTeam(int id, String abbreviation, String name, String city, String division, String conference, int sbWins,Model model) {
+public String editTeam(int id, String abbreviation, String name, String city, String division, String conference, int sbWins,String logo,Model model) {
 	System.out.println("editTeam*********" + id);
 	try {
-		dao.editTeam(id, abbreviation, name, city, division, conference, sbWins);
+		dao.editTeam(id, abbreviation, name, city, division, conference, sbWins,logo);
 		model.addAttribute("team", dao.findById(id));
 		return "view";
 	} catch (Exception e) {

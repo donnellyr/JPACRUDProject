@@ -28,6 +28,7 @@ Conference: <input type="text" id="conferece" name="conference" value="${team.co
 <br>
 SuperBowl Wins: <input type="number" id="sbWins" name="sbWins" value="${team.sbWins}" placeholder="SuperBowl Wins">
 <br>
+Team Logo: <input type="text" id="logo" name="logo" value="${team.logo}" placeholder="logo URL">
 <input type="submit" class="btn btn-primary" value="Edit Team">
 
 </form>

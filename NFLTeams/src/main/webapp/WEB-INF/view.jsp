@@ -13,6 +13,7 @@
 <body>
 <a href="home.do">Home</a>
 <h1>${team.city} ${team.name}</h1>
+<img src="${team.logo}" class="center" width="200" height="200">
 <table class="table table-striped">
 <tr>Abbreviation: ${team.abbreviation}</tr>
 <br>

@@ -11,7 +11,7 @@ NFLteam findById(int teamid);
 public List<NFLteam> findAll();
  boolean addTeam(NFLteam team);
  boolean deleteTeam(int id);
- boolean editTeam(int id, String abbreviation, String name, String city, String division, String conference, int sbWins);
+ boolean editTeam(int id, String abbreviation, String name, String city, String division, String conference, int sbWins, String logo);
 
 
 }

@@ -34,13 +34,14 @@ public class NFLteam {
 	}
 
 
-	public NFLteam(String abbreviation, String name, String city, String division, String conference,int sbWins) {
+	public NFLteam(String abbreviation, String name, String city, String division, String conference,int sbWins, String logo) {
 		this.abbreviation = abbreviation;
 		this.name = name;
 		this.city = city;
 		this.division = division;
 		this.conference = conference;
 		this.sbWins =sbWins;
+		this.logo = logo;
 	}
 
 
