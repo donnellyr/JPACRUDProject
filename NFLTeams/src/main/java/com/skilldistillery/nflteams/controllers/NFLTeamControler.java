@@ -25,34 +25,48 @@ public String findById(int id, Model model) {
 @RequestMapping(path="add.do")
 public String addTeam(String abbreviation, String name, String city, String division, String conference, int sbWins,Model model) {
 NFLteam newteam = new NFLteam(abbreviation,name,city,division,conference,sbWins);
-System.out.println("*******"+newteam);
-dao.addTeam(newteam);
-model.addAttribute("teams",dao.findAll());
-model.addAttribute("teams",dao.findAll());
-return "index";
+try {
+	System.out.println("*******"+newteam);
+	dao.addTeam(newteam);
+	model.addAttribute("teams",dao.findAll());
+	model.addAttribute("teams",dao.findAll());
+	return "index";
+} catch (Exception e) {
+	return "error";
+}
 }
 @RequestMapping(path="delete.do")
 public String deleteTeam(int id, Model model) {
 	System.out.println(id);
-	dao.deleteTeam(id);
-	model.addAttribute("teams",dao.findAll());
-	return "index";
+	try {
+		dao.deleteTeam(id);
+		model.addAttribute("teams",dao.findAll());
+		return "index";
+	} catch (Exception e) {
+		return "error";
+	}
 }
 @RequestMapping(path="editView.do")
 public String editView(int id, Model model) {
-	model.addAttribute("team",dao.findById(id));
-	System.out.println("editView*********" + id);
-	
-	return "edit";
+	try {
+		model.addAttribute("team",dao.findById(id));
+		System.out.println("editView*********" + id);
+		return "edit";
+	} catch (Exception e) {
+		return "error";
+	}
 
 }
 @RequestMapping(path="editTeam.do")
 public String editTeam(int id, String abbreviation, String name, String city, String division, String conference, int sbWins,Model model) {
 	System.out.println("editTeam*********" + id);
-	dao.editTeam(id, abbreviation, name, city, division, conference, sbWins);
-	model.addAttribute("team", dao.findById(id));
-	
-	return "view";
+	try {
+		dao.editTeam(id, abbreviation, name, city, division, conference, sbWins);
+		model.addAttribute("team", dao.findById(id));
+		return "view";
+	} catch (Exception e) {
+		return "error";
+	}
 	
 }
 }

@@ -12,12 +12,13 @@
 </head>
 <body>
 <h1>NFL Teams</h1>
+<img alt="NFL Logo" src="https://static.www.nfl.com/image/upload/v1554321393/league/nvfr7ogywskqrfaiu38m.svg" class="center" width="350" height="350">
 <a href="create.html">add team</a>
 <br>
 
 Find Team By ID: <form action="getTeam.do" class="form-control">
-<input type="number" id="id" name="id">
-<input type="submit" value="submit">
+<input type="number" id="id" name="id" placeholder="Find Team By ID">
+<input type="submit"class="btn btn-primary"value="submit">
 </form>
 <table class="table table-striped">
 <c:forEach items="${teams}" var="team">
